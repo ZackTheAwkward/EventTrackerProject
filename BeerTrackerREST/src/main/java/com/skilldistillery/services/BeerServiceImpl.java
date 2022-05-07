@@ -35,6 +35,11 @@ public class BeerServiceImpl implements BeerService {
 		Beer managed = beerRepo.findById(id).get();
 		if(managed != null) {
 			managed.setName(beer.getName());
+			managed.setCompany(beer.getCompany());
+			managed.setAbv(beer.getAbv());
+			managed.setType(beer.getType());
+			managed.setDescription(beer.getDescription());
+			managed.setImageUrl(beer.getImageUrl());
 		}
 		beerRepo.saveAndFlush(managed);
 		return managed;
@@ -50,5 +55,23 @@ public class BeerServiceImpl implements BeerService {
 		}
 		return removed;
 	}
+
+	@Override
+	public List<Beer> listAllBeerByType(String keyword) {
+		keyword = "%" + keyword + "%";
+		return beerRepo.findByType(keyword);
+	}
+
+	@Override
+	public List<Beer> listBeerByKeyword(String keyword) {
+		keyword = "%" + keyword + "%";
+		return beerRepo.findByNameOrCompanyLike(keyword, keyword);
+	}
+
+	@Override
+	public List<Beer> searchByAbvRange(double low, double high) {
+		return beerRepo.findByAbvBetween(low, high);
+	}
+	
 
 }

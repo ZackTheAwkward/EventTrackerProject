@@ -11,4 +11,7 @@ public interface BeerService {
 		Beer addBeer(Beer beer);
 		Beer updateBeer(Beer beer, int id);
 		boolean removeBeer(int id);
+		List<Beer> listAllBeerByType(String keyword);
+		List<Beer> listBeerByKeyword(String keyword);
+		List<Beer> searchByAbvRange(double low, double high);
 }

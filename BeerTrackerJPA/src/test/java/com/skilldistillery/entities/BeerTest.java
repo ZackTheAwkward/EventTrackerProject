@@ -41,9 +41,12 @@ class BeerTest {
 	}
 
 	@Test
-	void test() {
+	void test_for_correct_beer_mapping() {
 		assertNotNull(beer);
-		assertEquals("Juicy Haze IPA", beer.getName());
+		assertEquals("New Belgium", beer.getCompany());
+		assertEquals("Voodoo Ranger Juicy Haze IPA", beer.getName());
+		assertEquals(7.5 , beer.getAbv());
+		assertEquals("IPA - New England/Hazy", beer.getType());
 	
 		
 	}

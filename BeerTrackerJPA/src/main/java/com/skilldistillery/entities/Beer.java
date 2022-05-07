@@ -2,6 +2,7 @@ package com.skilldistillery.entities;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,18 @@ public class Beer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	private String company;
+	
 	private String name;
+	
+	private double abv;
+	
+	private String type;
+	
+	private String description;
+	
+	@Column(name = "image_url")
+	private String imageUrl;
 
 	public Beer() {
 		super();
@@ -35,10 +47,52 @@ public class Beer {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public double getAbv() {
+		return abv;
+	}
+
+	public void setAbv(double abv) {
+		this.abv = abv;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
 	@Override
 	public String toString() {
-		return "Beer [id=" + id + ", name=" + name + "]";
+		return "Beer ID:" + id + ", Company: " + company + ", Name: " + name + ", ABV: " + abv + "%, Style: " + type
+				+ ", Description: " + description;
 	}
 
 	@Override
