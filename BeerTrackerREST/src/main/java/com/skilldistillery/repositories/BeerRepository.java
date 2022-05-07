@@ -11,7 +11,7 @@ public interface BeerRepository extends JpaRepository<Beer, Integer> {
 	
 	List<Beer> findByTypeLike(@Param("k") String keyword);
 	
-	List<Beer> findByNameOrCompanyLike(@Param("k") String keyword1, @Param("k") String keyword2);
+	List<Beer> findByCompanyLikeOrNameLike(@Param("k") String keyword1, @Param("k") String keyword2);
 	
 	List<Beer> findByAbvBetween(double low, double high);
 	

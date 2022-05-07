@@ -27,7 +27,9 @@ class BeerRepositoryTest {
 	
 	@Test
 	void test_for_search_by_beer_name_and_company() {
-		List<Beer> b = beerRepo.findByNameOrCompanyLike("Voodoo Ranger Juicy Haze IPA", "New Belgium");
+		String keyword1 = "%" + "New" + "%";
+		String keyword2 = "%" + "IPA" + "%";
+		List<Beer> b = beerRepo.findByCompanyLikeOrNameLike(keyword1, keyword2);
 		assertNotNull(b);
 		assertTrue(b.size() > 0);
 		
