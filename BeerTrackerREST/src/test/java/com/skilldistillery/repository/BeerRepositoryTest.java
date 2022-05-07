@@ -20,7 +20,7 @@ class BeerRepositoryTest {
 
 	@Test
 	void test_for_search_by_beer_type() {
-		List<Beer> b = beerRepo.findByType("IPA - New England/Hazy");
+		List<Beer> b = beerRepo.findByTypeLike("IPA - New England - Hazy");
 		assertNotNull(b);
 		assertTrue(b.size() > 0);
 	}

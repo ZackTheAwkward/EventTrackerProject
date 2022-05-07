@@ -59,7 +59,7 @@ public class BeerServiceImpl implements BeerService {
 	@Override
 	public List<Beer> listAllBeerByType(String keyword) {
 		keyword = "%" + keyword + "%";
-		return beerRepo.findByType(keyword);
+		return beerRepo.findByTypeLike(keyword);
 	}
 
 	@Override

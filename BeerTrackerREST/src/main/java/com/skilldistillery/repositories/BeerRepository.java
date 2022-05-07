@@ -9,7 +9,7 @@ import com.skilldistillery.entities.Beer;
 
 public interface BeerRepository extends JpaRepository<Beer, Integer> {
 	
-	List<Beer> findByType(@Param("k") String keyword);
+	List<Beer> findByTypeLike(@Param("k") String keyword);
 	
 	List<Beer> findByNameOrCompanyLike(@Param("k") String keyword1, @Param("k") String keyword2);
 	

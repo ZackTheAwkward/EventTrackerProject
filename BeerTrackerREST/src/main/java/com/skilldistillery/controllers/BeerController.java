@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.entities.Beer;
+import com.skilldistillery.repositories.BeerRepository;
 import com.skilldistillery.services.BeerService;
 
 @RestController
@@ -55,5 +56,16 @@ public class BeerController {
 			res.setStatus(404);
 		}
 	}
-	
+	@GetMapping("beers/search/type/{keyword}")
+	public List<Beer> searchBeerByType(@PathVariable String keyword){
+		return beerSer.listAllBeerByType(keyword);
+	}
+	@GetMapping("beers/search/companyorname/{keyword}")
+	public List<Beer> searchBeerByCompanyOrName(@PathVariable String keyword){
+		return beerSer.listBeerByKeyword(keyword);
+	}
+	@GetMapping("beers/search/abv/{low}/{high}")
+	public List<Beer> seachBeerByAbvRange(@PathVariable double low, @PathVariable double high){
+		return beerSer.searchByAbvRange(low, high);
+	}
 }
