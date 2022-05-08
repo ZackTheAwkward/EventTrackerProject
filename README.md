@@ -39,28 +39,28 @@ http://localhost:8080/api/beers/2
 http://localhost:8080/api/beers/3
 
 **JSON Body template for Adding a Beer:**
-
-  {
-      "company": "String",
-      "name": "String",
-      "abv": double,
-      "type": "String",
-      "description": "String(Can Be Null)",
-      "imageUrl": "String(Can Be Null)"
-    }
-
+```
+{
+    "company": "String",
+    "name": "String",
+    "abv": double,
+    "type": "String",
+    "description": "String(Can Be Null)",
+    "imageUrl": "String(Can Be Null)"
+}
+```
 **JSON Body template for Updating a Beer:**
-
-  {
-      "id": int(Int ID of the beer being updated),
-      "company": "String",
-      "name": "String",
-      "abv": double,
-      "type": "String",
-      "description": "String(Can Be Null)",
-      "imageUrl": "String(Can Be Null)"
-    }
-
+```
+{
+    "id": int(Int ID of the beer being updated),
+    "company": "String",
+    "name": "String",
+    "abv": double,
+    "type": "String",
+    "description": "String(Can Be Null)",
+    "imageUrl": "String(Can Be Null)"
+}
+```
 ## Technologies Used
 - MySQL Workbench
 - Spring Tool Suite 4
@@ -80,6 +80,8 @@ http://localhost:8080/api/beers/3
 ## Lessons Learned
 This project really helped solidify my understanding of how to use the REST API. The initial CRUD operations were very simple to understand, however going beyond that I struggled with. To help me understand how to use the REST repository at bit better I added a few other queries to my project to search for a beer by its name or company name, by the type of beer, or search by an ABV% range. Before going into Postman to test the routing, I first made a JUNIT test to make sure my repository methods were functional. The search by ABV test passed, but the other 2 search methods were failing.
 
-  List<Beer> findByCompanyLikeOrNameLike(@Param("k") String keyword1, @Param("k") String keyword2);
+```
+List<Beer> findByCompanyLikeOrNameLike(@Param("k") String keyword1, @Param("k") String keyword2); 
+```
 
 The JUNIT test helped me realize for my search by company/name method I had missed a like statement in front of name so my test could only find a beer by the company name. The type test was failing because I wasn't correctly passing my string value into the method. After getting my test to pass, I was able to then test the mappings in Postman and see my queries returning the correct results.
