@@ -40,26 +40,26 @@ http://localhost:8080/api/beers/3
 
 **JSON Body template for Adding a Beer:**
 
-{
-    "company": "String",
-    "name": "String",
-    "abv": double,
-    "type": "String",
-    "description": "String(Can Be Null)",
-    "imageUrl": "String(Can Be Null)"
-}
+  {
+      "company": "String",
+      "name": "String",
+      "abv": double,
+      "type": "String",
+      "description": "String(Can Be Null)",
+      "imageUrl": "String(Can Be Null)"
+    }
 
 **JSON Body template for Updating a Beer:**
 
-{
-    "id": int(Int ID of the beer being updated),
-    "company": "String",
-    "name": "String",
-    "abv": double,
-    "type": "String",
-    "description": "String(Can Be Null)",
-    "imageUrl": "String(Can Be Null)"
-}
+  {
+      "id": int(Int ID of the beer being updated),
+      "company": "String",
+      "name": "String",
+      "abv": double,
+      "type": "String",
+      "description": "String(Can Be Null)",
+      "imageUrl": "String(Can Be Null)"
+    }
 
 ## Technologies Used
 - MySQL Workbench
