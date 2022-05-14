@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Beer App</title>
+<script type="text/javascript" src="js/eventFunctions.js"></script>
+</head>
+<body>
+  <h1>Beer App</h1>
+
+
+
+<form name="findBeer">
+<input type="number" name="beerId">
+<button name="lookup">Find Beer</button>
+</form>
+
+<div id="output">
+    <div id="beerData"></div>
+  </div>
+
+
+
+ <form name="createBeerForm">
+
+    Company:<input type="text" name="company">
+    Name:<input type="text" name="name">
+    ABV%:<input type="number" name="abv">
+    Type:<input type="text" name="type">
+    Description:<input type="text" name="description">
+    Image URL:<input type="text" name="imageUrl">
+    <button name="createBeer">Add Beer</button>
+  </form>
+
+<form name="updateBeerForm">
+ 	ID:<input type="text" name="updateId">
+    Company:<input type="text" name="updateCompany">
+    Name:<input type="text" name="name">
+    ABV%:<input type="number" name="abv">
+    Style:<input type="text" name="type">
+    Description:<input type="text" name="description">
+    Image URL:<input type="text" name="imageUrl">
+    <button name="updateBeer">Update Beer</button>
+  </form>
+
+<form name="deleteBeer">
+<input type="number" name="deleteId">
+<button name="lookup">Delete a Beer</button>
+</form>
+
+
+<form name="findBeerRange">
+<input type="number" name="min">
+<input type="number" name="max">
+<button name="range">Find Beers by range of ABV%</button>
+</form>
+
+</body>
+</html>
