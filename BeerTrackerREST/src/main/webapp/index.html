@@ -8,50 +8,79 @@
 <body>
   <h1>Beer App</h1>
 
+<br>
 
 
+<h2>Search for Beer by ID</h2>
 <form name="findBeer">
-<input type="number" name="beerId">
+ID: <input type="number" name="beerId">
 <button name="lookup">Find Beer</button>
 </form>
+<br>
+<br>
+<br>
 
 <div id="output">
     <div id="beerData"></div>
   </div>
 
 
-
+<h2>Add A Beer</h2>
  <form name="createBeerForm">
 
     Company:<input type="text" name="company">
+    <br>
     Name:<input type="text" name="name">
+    <br>
     ABV%:<input type="number" name="abv">
+    <br>
     Type:<input type="text" name="type">
+    <br>
     Description:<input type="text" name="description">
+    <br>
     Image URL:<input type="text" name="imageUrl">
+    <br>
     <button name="createBeer">Add Beer</button>
   </form>
 
+<br>
+<br>
+
+<h2>Update A Beer</h2>
 <form name="updateBeerForm">
  	ID:<input type="text" name="updateId">
+ 	<br>
     Company:<input type="text" name="updateCompany">
+ 	<br>
     Name:<input type="text" name="name">
+ 	<br>
     ABV%:<input type="number" name="abv">
+ 	<br>
     Style:<input type="text" name="type">
+ 	<br>
     Description:<input type="text" name="description">
+ 	<br>
     Image URL:<input type="text" name="imageUrl">
+ 	<br>
     <button name="updateBeer">Update Beer</button>
   </form>
 
+<br>
+<br>
+
+<h2>Delete A Beer</h2>
 <form name="deleteBeer">
-<input type="number" name="deleteId">
+ID: <input type="number" name="deleteId">
 <button name="lookup">Delete a Beer</button>
 </form>
+<br>
+<br>
 
-
+<h2>Find Beer By ABV% Range</h2>
 <form name="findBeerRange">
-<input type="number" name="min">
-<input type="number" name="max">
+Minimum % : <input type="number" name="min">
+<br>
+Maximum % : <input type="number" name="max">
 <button name="range">Find Beers by range of ABV%</button>
 </form>
 
