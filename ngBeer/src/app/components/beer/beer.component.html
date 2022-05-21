@@ -1,0 +1,87 @@
+<h1>Add A Beer</h1>
+
+<form name="newBeer" *ngIf="!selected">
+  Name: <input type="text" name="name" [(ngModel)]="newBeer.name">
+  <br>
+  Company: <input type="text" name="company" [(ngModel)]="newBeer.company">
+  <br>
+  ABV: <input type="number" name="'abv" [(ngModel)]="newBeer.abv">
+  <br>
+  Type: <input type="text" name="type" [(ngModel)]="newBeer.type">
+  <br>
+  Description: <input type="text" name="description" [(ngModel)]="newBeer.description">
+  <br>
+  Image URL: <input type="text" name="imageUrl" [(ngModel)]="newBeer.imageUrl">
+  <br>
+  <button (click)="createBeer(newBeer)">submit</button>
+  </form>
+<br>
+<h2>List of Beers</h2>
+  <table class="table" *ngIf="!selected">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Company</td>
+        <td>Name</td>
+        <td>Style</td>
+        <td>ABV%</td>
+        <td>Description</td>
+        <td>Image</td>
+        <td>Update</td>
+        <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let beer of beers">
+        <td>{{beer.id}}</td>
+        <td>{{beer.company}}</td>
+        <td>{{beer.name}}</td>
+        <td>{{beer.type}}</td>
+        <td>{{beer.abv}}</td>
+        <td>{{beer.description}}</td>
+        <td>
+          <img [src]="beer.imageUrl" class="img-thumbnail"/>
+        </td>
+        <td ><button (click)="setBeer(beer)">Update</button></td>
+        <td><button (click)="deleteBeer(beer.id)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div *ngIf="selected">
+    <img [src]="selected.imageUrl">
+    <p>{{selected.id}}</p>
+    <p>{{selected.company | uppercase}}</p>
+    <p>{{selected.name}}</p>
+    <p>{{selected.type}}</p>
+    <p>{{selected.abv}}</p>
+    <p>{{selected.description }}</p>
+    <button (click)="setEditBeer()">Edit</button>
+    <br>
+    <button (click)="selected = null">Back</button>
+    </div>
+
+
+    <div *ngIf="editBeer">
+      <form>
+        Company: <input type="text" name="company" [(ngModel)]="editBeer.company">
+        <br>
+        Name: <input type="text" name="name" [(ngModel)]="editBeer.name">
+        <br>
+        Style: <input type="text" name="type" [(ngModel)]="editBeer.type">
+        <br>
+        ABV%: <input type="number" name="abv" [(ngModel)]="editBeer.abv">
+        <br>
+        Description: <input type="text" name="description" [(ngModel)]="editBeer.description">
+        <br>
+        Image URL: <input type="text" name="imageUrl" [(ngModel)]="editBeer.imageUrl">
+        <br>
+        <button (click)="updateBeer(editBeer)">Save</button>
+        <br>
+        <button (click)="editBeer = null">Cancel</button>
+        <br>
+      </form>
+    </div>
+
+
