@@ -15,8 +15,10 @@
   <br>
   <button (click)="createBeer(newBeer)">submit</button>
   </form>
+
 <br>
-<h2>List of Beers</h2>
+
+<h2>List of Beers {{beerCounter()}}</h2>
   <table class="table" *ngIf="!selected">
     <thead>
       <tr>
@@ -37,7 +39,7 @@
         <td>{{beer.company}}</td>
         <td>{{beer.name}}</td>
         <td>{{beer.type}}</td>
-        <td>{{beer.abv}}</td>
+        <td>{{beer.abv}}%</td>
         <td>{{beer.description}}</td>
         <td>
           <img [src]="beer.imageUrl" class="img-thumbnail"/>
@@ -48,9 +50,14 @@
     </tbody>
   </table>
 
+<br>
+
+
+
+
 
   <div *ngIf="selected">
-    <img [src]="selected.imageUrl">
+    <img [src]="selected.imageUrl"/>
     <p>{{selected.id}}</p>
     <p>{{selected.company | uppercase}}</p>
     <p>{{selected.name}}</p>
@@ -58,7 +65,6 @@
     <p>{{selected.abv}}</p>
     <p>{{selected.description }}</p>
     <button (click)="setEditBeer()">Edit</button>
-    <br>
     <button (click)="selected = null">Back</button>
     </div>
 

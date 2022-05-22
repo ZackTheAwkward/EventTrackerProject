@@ -79,8 +79,9 @@ deleteBeer(id: number) {
     (err) => console.error(err)
   );
 }
-
-
+beerCounter() {
+  return this.beers.length;
+}
 
 
 }
